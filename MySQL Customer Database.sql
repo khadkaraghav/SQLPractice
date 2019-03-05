@@ -47,6 +47,29 @@ select * from Company;
 select CONCAT(`FirstName`,' ',`LastName`) as `FullName`, customer.Company from customer 
 inner join company on customer.companyID=company.companyID;
 
+select * from customer where LastName='Smith';
+
+select FirstName, Company, Position from customer where City='Virginia Beach'; 
+
+select company, count(*) from customer group by company order by count(*) DESC;
+
+select company, count(*) from customer group by company HAVING count(*)>2; 
+
+select State, count(*) from customer group by State order by count(*) DESC;
+ 
+update customer SET LastName='Smith' WHERE FirstName='Paula' AND State='CA' AND City='Anaheim';
+
+select FirstName, LastName from customer where State ='CA' AND City='Anaheim' order by FirstName DESC;
+
+select * from customer where FirstName='Vanessa' and LastName='Smith';
+
+update customer SET LastName='Smith' where customerID=3;
+
+select * from customer where LastName='Smith';
+
+Select count(*) from customer where LastName like 'S%';
+
+
 
 
 
